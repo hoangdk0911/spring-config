@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: gateway-service
+  datasource:
+    url: jdbc:oracle:thin:@dred01-scan1.acb.com.vn:1521/dgtpat
+    username: payroll
+    password: test20
+    driver-class-name: oracle.jdbc.OracleDriver
+    hikari:
+      connection-timeout: 60000
+      maximum-pool-size: 5
+  jpa: 
+    hibernate:
+      ddl-auto: update
+server:
+  port: 9981
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+zuul:
+  ignored-services: "*"
+  routes:
+    demo-service:
+      path: /demo/**
+      url: demo-service
+      
+app:  
+  token: h123sdak213asdjjghefopzm
+  expiration-time: 7200000
+  admin: 
+    firstName: Võ
+    lastName: Hoàng
+    email: hoangdk0911@gmail.com
+    password: 123321h
