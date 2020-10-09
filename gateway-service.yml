@@ -24,6 +24,9 @@ zuul:
     demo-service:
       path: /demo/**
       url: demo-service
+    node-service:
+      path: /node/**
+      url: node-service
       
 app:  
   token: h123sdak213asdjjghefopzm
